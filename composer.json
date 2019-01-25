@@ -9,6 +9,7 @@
             "role": "Administrador"
         }
     ],
+    "license": "MIT",
     "require": {
         "php" : ">= 7.0.0"
     },
