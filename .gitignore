@@ -62,3 +62,6 @@ typings/
 #composer 
 composer.lock
 /vendor/
+
+#Variable de entorno
+/config/env.php
