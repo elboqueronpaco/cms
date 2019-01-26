@@ -10,7 +10,7 @@ class Controller
         {
             $action = $_GET['action'];
             if (method_exists($this, $action)) {
-                $this->$action;
+                $this->$action();
             }else {
                 die("$action no existe");
             }

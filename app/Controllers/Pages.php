@@ -3,7 +3,7 @@
 
 
 use App\Core\Controller;
-
+use App\Core\Layouts;
 class Pages extends Controller
 {
     public function __construct()
@@ -12,7 +12,10 @@ class Pages extends Controller
     }
     public function index()
     {
-        echo "Pagina inicial";
+        $Layouts = new Layouts("Pages/index");
+    }
+    public function about(){
+        $Layouts = new Layouts("Pages/about");
     }
     
 }

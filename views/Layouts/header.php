@@ -10,8 +10,8 @@
     <header>
         <nav>
             <ul>
-                <li><a href="<?= PUBLIC_PATH ?>">Inicio</a></li>
-                <li><a href="<?= PUBLIC_PATH ?>nosotros">nosotros</a></li>
+                <li><a href="<?= urlBase() ?>">Inicio</a></li>
+                <li><a href="<?= urlBase() ?>?controller=pages&action=about">nosotros</a></li>
             </ul>
         </nav>
     </header>
