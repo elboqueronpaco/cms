@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "connectionTimeout": 15,
+            "database": "cms_digitalpaco",
+            "dialect": "MySQL",
+            "name": "digitalpaco",
+            "password": "Ocap_1975",
+            "port": 3306,
+            "server": "localhost",
+            "username": "digitalpaco_admin"
+        },
+        {
+            "askForPassword": false,
+            "connectionTimeout": 15,
+            "database": "cms_digitalpaco",
+            "dialect": "MySQL",
+            "name": "cms_digitalpaco",
+            "password": "Ocap_5791",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "digitalpaco_admin"
+        }
+    ]
+}

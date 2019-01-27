@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 define('APP_PATH',  __DIR__ . '/..');
 define('CONTROLLER__DEFAULT', 'Pages');
 define('APP_NAME', 'cms_digitalpaco');

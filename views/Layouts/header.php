@@ -13,5 +13,9 @@
                 <li><a href="<?= urlBase() ?>">Inicio</a></li>
                 <li><a href="<?= urlBase() ?>?controller=pages&action=about">nosotros</a></li>
             </ul>
+            <ul>
+                <li><a href="<?= urlBase() ?>?controller=users&action=register">Registrate</a></li>
+                
+            </ul>
         </nav>
     </header>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\ModelBase;
+use App\Models\Database;
 class User extends ModelBase
 {
     public $name;
@@ -9,10 +10,6 @@ class User extends ModelBase
     public $username;
     public $email;
     public $password;
-    public $avatar;
-    public $rol_id;
-    public $created_at;
-    public $updated_at;
 
     /**
      * Get the value of name
@@ -113,92 +110,26 @@ class User extends ModelBase
 
         return $this;
     }
-
-    /**
-     * Get the value of avatar
-     */ 
-    public function getAvatar()
-    {
-        return $this->avatar;
-    }
-
-    /**
-     * Set the value of avatar
-     *
-     * @return  self
-     */ 
-    public function setAvatar($avatar)
-    {
-        $this->avatar = $avatar;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of rol_id
-     */ 
-    public function getRol_id()
-    {
-        return $this->rol_id;
-    }
-
-    /**
-     * Set the value of rol_id
-     *
-     * @return  self
-     */ 
-    public function setRol_id($rol_id)
-    {
-        $this->rol_id = $rol_id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of created_at
-     */ 
-    public function getCreated_at()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Set the value of created_at
-     *
-     * @return  self
-     */ 
-    public function setCreated_at($created_at)
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of updated_at
-     */ 
-    public function getUpdated_at()
-    {
-        return $this->updated_at;
-    }
-
-    /**
-     * Set the value of updated_at
-     *
-     * @return  self
-     */ 
-    public function setUpdated_at($updated_at)
-    {
-        $this->updated_at = $updated_at;
-
-        return $this;
-    }
     public static function saveUser($datas)
     {
         $db = new ModelBase();
-        $saveUser = $db->insert('users', $datas);
-        if ($saveUser == true) {
-            $_SESSION['message'] = "Registro exitoso";
-        }
+        $saveUser = $db->insertar('users', $datas);
+        
+    }
+    public static function getUserbyusername($username){
+        $db = new Database();
+        $query = "SELECT * FROM users WHERE username = '" . $username ."'";
+        $sentencia = $db->prepare($query);
+        $sentencia->execute(array($username));
+        $result = $sentencia->fetch();
+        return $result;
+    }
+    public static function getUserbyeemail($email){
+        $db = new Database();
+        $query = "SELECT * FROM users WHERE email = '" . $email ."'";
+        $sentencia = $db->prepare($query);
+        $sentencia->execute(array($email));
+        $result = $sentencia->fetch();
+        return $result;
     }
 }
